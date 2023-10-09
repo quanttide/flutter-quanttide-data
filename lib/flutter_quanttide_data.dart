@@ -1,7 +1,6 @@
-library flutter_quanttide_data;
-
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+/// 数据表单模型
+export "src/models/form.dart";
+/// 数据表单视图模型
+export "src/view_models/form.dart";
+/// 数据表单视图
+export "src/views/form.dart";
