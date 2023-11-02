@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'screens/form.dart';
+import 'screens/schema.dart';
 import 'screens/workflow.dart';
 
 
@@ -37,8 +37,8 @@ class ExampleApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        '/': (context) => const WorkflowScreen(),
-        // 'forms': (context) => const DataFormScreen(),
+        '/': (context) => const DataSchemaScreen(),
+        '/workflow': (context) => const WorkflowScreen(),
       }
     );
   }

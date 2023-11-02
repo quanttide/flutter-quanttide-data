@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 
 
-/// 数据表单视图
-class DataFormView extends StatelessWidget {
+/// 数据记录表单
+class DataRecordDetailForm extends StatelessWidget {
   /// 字段列表
   final List<Map<String, dynamic>> fields;
 
-  const DataFormView({super.key, required this.fields});
+  const DataRecordDetailForm({super.key, required this.fields});
 
   @override
   Widget build(BuildContext context) {

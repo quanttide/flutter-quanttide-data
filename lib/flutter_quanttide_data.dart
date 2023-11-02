@@ -1,6 +1,4 @@
-/// 数据表单模型
-export "src/models/form.dart";
-/// 数据表单视图模型
-export "src/view_models/form.dart";
-/// 数据表单视图
-export "src/views/form.dart";
+// 数据模型
+export 'src/schemas/schema.dart';
+export 'src/views/schema_detail_form.dart';
+export 'src/blocs/schema_detail_bloc.dart';

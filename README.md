@@ -1,4 +1,11 @@
 # `flutter-quanttide-data`
 
-量潮数据工程Flutter工具箱
+Flutter SDK for Quanttide Specification of Data Engineering
 
+## Contributing
+
+Updating domain models with `freezed`:
+
+```shell
+dart run build_runner build --delete-conflicting-outputs
+```
