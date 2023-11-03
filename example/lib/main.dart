@@ -37,7 +37,7 @@ class ExampleApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        '/': (context) => const DataSchemaScreen(),
+        '/': (context) => const DataSchemaListScreen(),
         '/workflow': (context) => const WorkflowScreen(),
       }
     );

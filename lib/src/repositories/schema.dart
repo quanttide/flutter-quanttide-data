@@ -9,7 +9,7 @@ class DataSchemaRepository {
 
   DataSchemaRepository({required this.apiService});
 
-  Future<List<DataSchema>> fetchDataSchemas() async {
+  Future<List<DataSchema>> listDataSchemas() async {
     try {
       // Make API call to fetch data schemas
       final data = await apiService.listDataSchemas();
@@ -23,7 +23,7 @@ class DataSchemaRepository {
     }
   }
 
-  Future<DataSchema> fetchDataSchema(String id) async {
+  Future<DataSchema> retrieveDataSchema(String id) async {
     try {
       // Make API call to fetch data schema by ID
       final data = await apiService.retrieveDataSchema(id);
