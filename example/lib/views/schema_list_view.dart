@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../schemas/schema.dart';
-import '../blocs/schema_bloc.dart';
+import 'package:flutter_quanttide_data/flutter_quanttide_data.dart';
 
 
 class DataSchemaListView extends StatelessWidget {

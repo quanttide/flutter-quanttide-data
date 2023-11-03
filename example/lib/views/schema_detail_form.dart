@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 
-import '../schemas/schema.dart';
+import 'package:flutter_quanttide_data/flutter_quanttide_data.dart';
 
 
 class DataSchemaDetailForm extends StatelessWidget {

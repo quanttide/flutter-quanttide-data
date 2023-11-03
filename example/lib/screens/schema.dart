@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_quanttide_data/flutter_quanttide_data.dart';
+import '../views/schema_list_view.dart';
 
 
 class DataSchemaListScreen extends StatelessWidget {
