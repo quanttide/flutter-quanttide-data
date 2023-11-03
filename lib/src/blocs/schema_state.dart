@@ -1,7 +1,13 @@
 part of 'schema_bloc.dart';
 
-@immutable
-abstract class DataSchemaState {}
+
+sealed class DataSchemaState extends Equatable {
+  const DataSchemaState();
+
+  @override
+  List<Object?> get props => [];
+}
+
 
 class DataSchemaInitial extends DataSchemaState {}
 
@@ -9,18 +15,27 @@ class DataSchemaWaiting extends DataSchemaState {}
 
 class DataSchemaError extends DataSchemaState {
   final String message;
-  
-  DataSchemaError(this.message);
+
+  const DataSchemaError(this.message);
+
+  @override
+  List<Object?> get props => [message];
 }
 
 class DataSchemaDetailSuccess extends DataSchemaState {
   final DataSchema dataSchema;
 
-  DataSchemaDetailSuccess(this.dataSchema);
+  const DataSchemaDetailSuccess(this.dataSchema);
+
+  @override
+  List<Object?> get props => [dataSchema];
 }
 
 class DataSchemaListSuccess extends DataSchemaState {
   final List<DataSchema> dataSchemaList;
 
-  DataSchemaListSuccess(this.dataSchemaList);
+  const DataSchemaListSuccess(this.dataSchemaList);
+
+  @override
+  List<Object?> get props => [dataSchemaList];
 }

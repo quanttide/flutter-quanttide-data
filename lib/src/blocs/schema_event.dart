@@ -1,7 +1,7 @@
 part of 'schema_bloc.dart';
 
-@immutable
-abstract class DataSchemaEvent {}
+
+sealed class DataSchemaEvent {}
 
 class DataSchemaRetrieved extends DataSchemaEvent {}
 
