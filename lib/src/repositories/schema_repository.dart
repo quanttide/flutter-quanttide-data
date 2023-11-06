@@ -5,28 +5,28 @@ import '../providers/api.dart';
 
 
 class DataSchemaRepository {
-  final ApiService apiService;
+  final ApiClient apiClient;
 
-  DataSchemaRepository({required this.apiService});
+  DataSchemaRepository({required this.apiClient});
 
   Future<List<DataSchema>> listDataSchemas() async {
     try {
       // Make API call to fetch data schemas
-      final data = await apiService.listDataSchemas();
+      final data = await apiClient.listDataSchemas();
 
       // Convert API response to a list of DataSchema objects
-      final List<DataSchema> dataSchemas = data.map((item) => DataSchema.fromJson(item)).toList();
+      final List<DataSchema> dataSchemas = (data).map((item) => DataSchema.fromJson(item)).toList();
 
       return dataSchemas;
     } catch (e) {
-      throw Exception('Failed to fetch data schemas: $e');
+      throw Exception('Failed to list data schemas: $e');
     }
   }
 
-  Future<DataSchema> retrieveDataSchema(String id) async {
+  Future<DataSchema> retrieveDataSchema(String name) async {
     try {
       // Make API call to fetch data schema by ID
-      final data = await apiService.retrieveDataSchema(id);
+      final data = await apiClient.request(httpMethod: 'GET', apiPath: '/schemas/$name');
 
       // Convert API response to a DataSchema object
       final DataSchema dataSchema = DataSchema.fromJson(data);
@@ -37,25 +37,24 @@ class DataSchemaRepository {
     }
   }
 
-  Future<void> saveDataSchema(DataSchema dataSchema) async {
+  Future<void> createDataSchema(DataSchema dataSchema) async {
     try {
       // Convert DataSchema object to JSON
       final jsonData = dataSchema.toJson();
 
       // Make API call to save data schema
-      await apiService.saveDataSchema(jsonData);
+      await apiClient.createDataSchema(jsonData);
     } catch (e) {
       throw Exception('Failed to save data schema: $e');
     }
   }
 
-  Future<void> deleteDataSchema(String id) async {
+  Future<void> deleteDataSchema(String name) async {
     try {
       // Make API call to delete data schema by ID
-      await apiService.destroyDataSchema(id);
+      await apiClient.request(httpMethod: 'DELETE', apiPath: '/schemas/$name');
     } catch (e) {
       throw Exception('Failed to delete data schema: $e');
     }
   }
 }
-

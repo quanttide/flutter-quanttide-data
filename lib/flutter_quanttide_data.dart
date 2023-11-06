@@ -3,7 +3,7 @@ export 'src/schemas/schema.dart';
 
 // 数据层
 export 'src/providers/api.dart';
-export 'src/repositories/schema.dart';
+export 'src/repositories/schema_repository.dart';
 
 // BLoC组件
 export 'src/blocs/schema_bloc.dart';

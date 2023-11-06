@@ -3,14 +3,14 @@ import 'package:equatable/equatable.dart';
 
 import '../providers/api.dart';
 import '../schemas/schema.dart';
-import '../repositories/schema.dart';
+import '../repositories/schema_repository.dart';
 
 part 'schema_event.dart';
 part 'schema_state.dart';
 
 
 class DataSchemaBloc extends Bloc<DataSchemaEvent, DataSchemaState> {
-  final DataSchemaRepository repository = DataSchemaRepository(apiService: ApiService());
+  final DataSchemaRepository repository = DataSchemaRepository(apiClient: ApiClient(apiRoot: ''));
 
   DataSchemaBloc() : super(DataSchemaInitial()) {
     on<DataSchemaRetrieved>(_onDataSchemaRetrieved);
