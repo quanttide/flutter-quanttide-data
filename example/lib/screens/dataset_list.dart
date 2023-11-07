@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_quanttide_data/flutter_quanttide_data.dart';
 
 import '../examples/dataset.dart';
-import '../views/dataset_table_view.dart';
 
 
 class DataSetListScreen extends StatelessWidget {

@@ -14,17 +14,15 @@ class DataSchemaDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: 200.0,
-              width: 200.0,
-              child: Image.network(imageUrl),
-            ),
-            Text(description),
-          ],
-        ),
+      body: Column(
+        children: <Widget>[
+          SizedBox(
+            height: 200.0,
+            width: 200.0,
+            child: Image.network(imageUrl),
+          ),
+          Text(description),
+        ],
       ),
     );
   }

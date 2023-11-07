@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../views/schema_list_view.dart';
+import 'package:flutter_quanttide_data/flutter_quanttide_data.dart';
 
 
 class DataSetDetailScreen extends StatelessWidget {
@@ -12,7 +11,12 @@ class DataSetDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('数据集页面'),
       ),
-      body: const DataSchemaListView(),
+      body: const Column(
+        children: [
+          DataSetDetailView(),
+          DataSchemaListView()
+        ]
+      ),
     );
   }
 }
