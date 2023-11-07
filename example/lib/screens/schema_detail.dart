@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 
 
 class DataSchemaDetailScreen extends StatelessWidget {
-  final String title = '';
-  final String description = '';
-  final String imageUrl = '';
 
   const DataSchemaDetailScreen({super.key});
 
@@ -12,16 +9,11 @@ class DataSchemaDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: const Text('标题'),
       ),
-      body: Column(
+      body: const Column(
         children: <Widget>[
-          SizedBox(
-            height: 200.0,
-            width: 200.0,
-            child: Image.network(imageUrl),
-          ),
-          Text(description),
+          Text('描述'),
         ],
       ),
     );
