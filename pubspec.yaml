@@ -13,15 +13,12 @@ dependencies:
   # 数据模型
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
-  # 状态管理
-  state_notifier: ^1.0.0
-  flutter_state_notifier: ^1.0.0
-  # 表单
+  # BLoC
   bloc: ^8.1.2
   meta: ^1.9.1
   equatable: ^2.0.5
+  # 网络请求
   http: ^1.1.0
-
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,6 @@
 # `flutter-quanttide-data`
 
-Flutter SDK for Quanttide Specification of Data Engineering
+Flutter Widgets for Quanttide Specification of Data Engineering
 
 ## Contributing
 

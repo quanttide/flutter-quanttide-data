@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'screens/schema.dart';
-import 'screens/workflow.dart';
+import 'screens/dataset_list.dart';
+import 'screens/dataset_detail.dart';
+import 'screens/schema_detail.dart';
 
 
 void main() {
@@ -37,8 +38,9 @@ class ExampleApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        '/': (context) => const DataSchemaListScreen(),
-        '/workflow': (context) => const WorkflowScreen(),
+        '/': (context) => const DataSetListScreen(),
+        '/dataset': (context) => const DataSetDetailScreen(),
+        '/schema': (context) => const DataSchemaDetailScreen(),
       }
     );
   }

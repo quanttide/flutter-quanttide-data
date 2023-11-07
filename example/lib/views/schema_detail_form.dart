@@ -4,6 +4,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_quanttide_data/flutter_quanttide_data.dart';
 
 
+/// 数据模型表单
 class DataSchemaDetailForm extends StatelessWidget {
   final DataSchema dataSchema;
 

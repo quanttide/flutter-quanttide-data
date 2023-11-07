@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_quanttide_data/flutter_quanttide_data.dart';
 
 
+/// 数据模型列表视图
 class DataSchemaListView extends StatelessWidget {
   const DataSchemaListView({super.key});
 
