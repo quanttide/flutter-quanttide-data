@@ -1,6 +1,7 @@
 // 领域模型
 export 'src/schemas/dataset.dart';
 export 'src/schemas/schema.dart';
+export 'src/schemas/record.dart';
 
 // 数据层
 export 'src/providers/api.dart';
