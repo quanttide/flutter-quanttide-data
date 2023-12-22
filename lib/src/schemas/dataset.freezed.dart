@@ -130,8 +130,8 @@ class _$DataSetImpl implements _DataSet {
   _$DataSetImpl(
       {required this.id,
       required this.name,
-      required this.verboseName,
-      required this.description});
+      this.verboseName,
+      this.description});
 
   factory _$DataSetImpl.fromJson(Map<String, dynamic> json) =>
       _$$DataSetImplFromJson(json);
@@ -186,8 +186,8 @@ abstract class _DataSet implements DataSet {
   factory _DataSet(
       {required final String id,
       required final String name,
-      required final String? verboseName,
-      required final String? description}) = _$DataSetImpl;
+      final String? verboseName,
+      final String? description}) = _$DataSetImpl;
 
   factory _DataSet.fromJson(Map<String, dynamic> json) = _$DataSetImpl.fromJson;
 
