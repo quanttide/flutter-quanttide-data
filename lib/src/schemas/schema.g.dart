@@ -6,8 +6,8 @@ part of 'schema.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DataSchema _$$_DataSchemaFromJson(Map<String, dynamic> json) =>
-    _$_DataSchema(
+_$DataSchemaImpl _$$DataSchemaImplFromJson(Map<String, dynamic> json) =>
+    _$DataSchemaImpl(
       id: json['id'] as String?,
       name: json['name'] as String?,
       verboseName: json['verboseName'] as String?,
@@ -24,7 +24,7 @@ _$_DataSchema _$$_DataSchemaFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_DataSchemaToJson(_$_DataSchema instance) =>
+Map<String, dynamic> _$$DataSchemaImplToJson(_$DataSchemaImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -36,15 +36,17 @@ Map<String, dynamic> _$$_DataSchemaToJson(_$_DataSchema instance) =>
       'fields': instance.fields,
     };
 
-_$_DataSchemaField _$$_DataSchemaFieldFromJson(Map<String, dynamic> json) =>
-    _$_DataSchemaField(
+_$DataSchemaFieldImpl _$$DataSchemaFieldImplFromJson(
+        Map<String, dynamic> json) =>
+    _$DataSchemaFieldImpl(
       name: json['name'] as String?,
       verboseName: json['verboseName'] as String?,
       type: json['type'] as String?,
       defaultValue: json['defaultValue'] as String?,
     );
 
-Map<String, dynamic> _$$_DataSchemaFieldToJson(_$_DataSchemaField instance) =>
+Map<String, dynamic> _$$DataSchemaFieldImplToJson(
+        _$DataSchemaFieldImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'verboseName': instance.verboseName,

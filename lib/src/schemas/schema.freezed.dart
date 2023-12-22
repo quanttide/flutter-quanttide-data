@@ -112,11 +112,11 @@ class _$DataSchemaCopyWithImpl<$Res, $Val extends DataSchema>
 }
 
 /// @nodoc
-abstract class _$$_DataSchemaCopyWith<$Res>
+abstract class _$$DataSchemaImplCopyWith<$Res>
     implements $DataSchemaCopyWith<$Res> {
-  factory _$$_DataSchemaCopyWith(
-          _$_DataSchema value, $Res Function(_$_DataSchema) then) =
-      __$$_DataSchemaCopyWithImpl<$Res>;
+  factory _$$DataSchemaImplCopyWith(
+          _$DataSchemaImpl value, $Res Function(_$DataSchemaImpl) then) =
+      __$$DataSchemaImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -131,11 +131,11 @@ abstract class _$$_DataSchemaCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DataSchemaCopyWithImpl<$Res>
-    extends _$DataSchemaCopyWithImpl<$Res, _$_DataSchema>
-    implements _$$_DataSchemaCopyWith<$Res> {
-  __$$_DataSchemaCopyWithImpl(
-      _$_DataSchema _value, $Res Function(_$_DataSchema) _then)
+class __$$DataSchemaImplCopyWithImpl<$Res>
+    extends _$DataSchemaCopyWithImpl<$Res, _$DataSchemaImpl>
+    implements _$$DataSchemaImplCopyWith<$Res> {
+  __$$DataSchemaImplCopyWithImpl(
+      _$DataSchemaImpl _value, $Res Function(_$DataSchemaImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -150,7 +150,7 @@ class __$$_DataSchemaCopyWithImpl<$Res>
     Object? updatedAt = freezed,
     Object? fields = freezed,
   }) {
-    return _then(_$_DataSchema(
+    return _then(_$DataSchemaImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -189,8 +189,8 @@ class __$$_DataSchemaCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DataSchema implements _DataSchema {
-  const _$_DataSchema(
+class _$DataSchemaImpl implements _DataSchema {
+  const _$DataSchemaImpl(
       {this.id,
       this.name,
       this.verboseName,
@@ -201,8 +201,8 @@ class _$_DataSchema implements _DataSchema {
       final List<DataSchemaField>? fields})
       : _fields = fields;
 
-  factory _$_DataSchema.fromJson(Map<String, dynamic> json) =>
-      _$$_DataSchemaFromJson(json);
+  factory _$DataSchemaImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DataSchemaImplFromJson(json);
 
   @override
   final String? id;
@@ -237,7 +237,7 @@ class _$_DataSchema implements _DataSchema {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DataSchema &&
+            other is _$DataSchemaImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.verboseName, verboseName) ||
@@ -259,12 +259,12 @@ class _$_DataSchema implements _DataSchema {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DataSchemaCopyWith<_$_DataSchema> get copyWith =>
-      __$$_DataSchemaCopyWithImpl<_$_DataSchema>(this, _$identity);
+  _$$DataSchemaImplCopyWith<_$DataSchemaImpl> get copyWith =>
+      __$$DataSchemaImplCopyWithImpl<_$DataSchemaImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DataSchemaToJson(
+    return _$$DataSchemaImplToJson(
       this,
     );
   }
@@ -279,10 +279,10 @@ abstract class _DataSchema implements DataSchema {
       final String? type,
       final DateTime? createdAt,
       final DateTime? updatedAt,
-      final List<DataSchemaField>? fields}) = _$_DataSchema;
+      final List<DataSchemaField>? fields}) = _$DataSchemaImpl;
 
   factory _DataSchema.fromJson(Map<String, dynamic> json) =
-      _$_DataSchema.fromJson;
+      _$DataSchemaImpl.fromJson;
 
   @override
   String? get id;
@@ -302,7 +302,7 @@ abstract class _DataSchema implements DataSchema {
   List<DataSchemaField>? get fields;
   @override
   @JsonKey(ignore: true)
-  _$$_DataSchemaCopyWith<_$_DataSchema> get copyWith =>
+  _$$DataSchemaImplCopyWith<_$DataSchemaImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -373,11 +373,11 @@ class _$DataSchemaFieldCopyWithImpl<$Res, $Val extends DataSchemaField>
 }
 
 /// @nodoc
-abstract class _$$_DataSchemaFieldCopyWith<$Res>
+abstract class _$$DataSchemaFieldImplCopyWith<$Res>
     implements $DataSchemaFieldCopyWith<$Res> {
-  factory _$$_DataSchemaFieldCopyWith(
-          _$_DataSchemaField value, $Res Function(_$_DataSchemaField) then) =
-      __$$_DataSchemaFieldCopyWithImpl<$Res>;
+  factory _$$DataSchemaFieldImplCopyWith(_$DataSchemaFieldImpl value,
+          $Res Function(_$DataSchemaFieldImpl) then) =
+      __$$DataSchemaFieldImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -385,11 +385,11 @@ abstract class _$$_DataSchemaFieldCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DataSchemaFieldCopyWithImpl<$Res>
-    extends _$DataSchemaFieldCopyWithImpl<$Res, _$_DataSchemaField>
-    implements _$$_DataSchemaFieldCopyWith<$Res> {
-  __$$_DataSchemaFieldCopyWithImpl(
-      _$_DataSchemaField _value, $Res Function(_$_DataSchemaField) _then)
+class __$$DataSchemaFieldImplCopyWithImpl<$Res>
+    extends _$DataSchemaFieldCopyWithImpl<$Res, _$DataSchemaFieldImpl>
+    implements _$$DataSchemaFieldImplCopyWith<$Res> {
+  __$$DataSchemaFieldImplCopyWithImpl(
+      _$DataSchemaFieldImpl _value, $Res Function(_$DataSchemaFieldImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -400,7 +400,7 @@ class __$$_DataSchemaFieldCopyWithImpl<$Res>
     Object? type = freezed,
     Object? defaultValue = freezed,
   }) {
-    return _then(_$_DataSchemaField(
+    return _then(_$DataSchemaFieldImpl(
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -423,12 +423,12 @@ class __$$_DataSchemaFieldCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DataSchemaField implements _DataSchemaField {
-  const _$_DataSchemaField(
+class _$DataSchemaFieldImpl implements _DataSchemaField {
+  const _$DataSchemaFieldImpl(
       {this.name, this.verboseName, this.type, this.defaultValue});
 
-  factory _$_DataSchemaField.fromJson(Map<String, dynamic> json) =>
-      _$$_DataSchemaFieldFromJson(json);
+  factory _$DataSchemaFieldImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DataSchemaFieldImplFromJson(json);
 
   @override
   final String? name;
@@ -448,7 +448,7 @@ class _$_DataSchemaField implements _DataSchemaField {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DataSchemaField &&
+            other is _$DataSchemaFieldImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.verboseName, verboseName) ||
                 other.verboseName == verboseName) &&
@@ -465,12 +465,13 @@ class _$_DataSchemaField implements _DataSchemaField {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DataSchemaFieldCopyWith<_$_DataSchemaField> get copyWith =>
-      __$$_DataSchemaFieldCopyWithImpl<_$_DataSchemaField>(this, _$identity);
+  _$$DataSchemaFieldImplCopyWith<_$DataSchemaFieldImpl> get copyWith =>
+      __$$DataSchemaFieldImplCopyWithImpl<_$DataSchemaFieldImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DataSchemaFieldToJson(
+    return _$$DataSchemaFieldImplToJson(
       this,
     );
   }
@@ -481,10 +482,10 @@ abstract class _DataSchemaField implements DataSchemaField {
       {final String? name,
       final String? verboseName,
       final String? type,
-      final String? defaultValue}) = _$_DataSchemaField;
+      final String? defaultValue}) = _$DataSchemaFieldImpl;
 
   factory _DataSchemaField.fromJson(Map<String, dynamic> json) =
-      _$_DataSchemaField.fromJson;
+      _$DataSchemaFieldImpl.fromJson;
 
   @override
   String? get name;
@@ -496,6 +497,6 @@ abstract class _DataSchemaField implements DataSchemaField {
   String? get defaultValue;
   @override
   @JsonKey(ignore: true)
-  _$$_DataSchemaFieldCopyWith<_$_DataSchemaField> get copyWith =>
+  _$$DataSchemaFieldImplCopyWith<_$DataSchemaFieldImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,4 +1,5 @@
 // 领域模型
+export 'src/schemas/dataset.dart';
 export 'src/schemas/schema.dart';
 
 // 数据层
