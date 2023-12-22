@@ -10,10 +10,10 @@ part 'schema.g.dart';
 @freezed
 class DataSchema with _$DataSchema {
   const factory DataSchema({
-    String? id,
-    String? name,
-    String? verboseName,
-    String? readme,
+    required String id,
+    required String name,
+    @Default('') String? verboseName,
+    @Default('') String? readme,
     String? type,
     DateTime? createdAt,
     DateTime? updatedAt,
@@ -29,7 +29,7 @@ class DataSchema with _$DataSchema {
 @freezed
 class DataSchemaField with _$DataSchemaField{
   const factory DataSchemaField({
-    String? name,
+    required String name,
     String? verboseName,
     String? type,
     String? defaultValue,

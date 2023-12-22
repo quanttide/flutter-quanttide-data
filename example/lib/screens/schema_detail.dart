@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 
-class DataSchemaDetailScreen extends StatelessWidget {
+class DataSchemaScreen extends StatelessWidget {
 
-  const DataSchemaDetailScreen({super.key});
+  const DataSchemaScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

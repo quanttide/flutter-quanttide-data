@@ -13,4 +13,7 @@ export 'src/repositories/record_repository.dart';
 export 'src/blocs/schema_bloc.dart';
 
 // 视图层
+export 'src/views/dataset_table.dart';
+export 'src/views/dataset_view.dart';
+export 'src/views/schema_table.dart';
 export 'src/views/record_form.dart';

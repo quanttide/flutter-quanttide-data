@@ -20,8 +20,8 @@ DataSchema _$DataSchemaFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$DataSchema {
-  String? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   String? get verboseName => throw _privateConstructorUsedError;
   String? get readme => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
@@ -42,8 +42,8 @@ abstract class $DataSchemaCopyWith<$Res> {
       _$DataSchemaCopyWithImpl<$Res, DataSchema>;
   @useResult
   $Res call(
-      {String? id,
-      String? name,
+      {String id,
+      String name,
       String? verboseName,
       String? readme,
       String? type,
@@ -65,8 +65,8 @@ class _$DataSchemaCopyWithImpl<$Res, $Val extends DataSchema>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
     Object? verboseName = freezed,
     Object? readme = freezed,
     Object? type = freezed,
@@ -75,14 +75,14 @@ class _$DataSchemaCopyWithImpl<$Res, $Val extends DataSchema>
     Object? fields = freezed,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       verboseName: freezed == verboseName
           ? _value.verboseName
           : verboseName // ignore: cast_nullable_to_non_nullable
@@ -120,8 +120,8 @@ abstract class _$$DataSchemaImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? id,
-      String? name,
+      {String id,
+      String name,
       String? verboseName,
       String? readme,
       String? type,
@@ -141,8 +141,8 @@ class __$$DataSchemaImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
     Object? verboseName = freezed,
     Object? readme = freezed,
     Object? type = freezed,
@@ -151,14 +151,14 @@ class __$$DataSchemaImplCopyWithImpl<$Res>
     Object? fields = freezed,
   }) {
     return _then(_$DataSchemaImpl(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       verboseName: freezed == verboseName
           ? _value.verboseName
           : verboseName // ignore: cast_nullable_to_non_nullable
@@ -191,10 +191,10 @@ class __$$DataSchemaImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$DataSchemaImpl implements _DataSchema {
   const _$DataSchemaImpl(
-      {this.id,
-      this.name,
-      this.verboseName,
-      this.readme,
+      {required this.id,
+      required this.name,
+      this.verboseName = '',
+      this.readme = '',
       this.type,
       this.createdAt,
       this.updatedAt,
@@ -205,12 +205,14 @@ class _$DataSchemaImpl implements _DataSchema {
       _$$DataSchemaImplFromJson(json);
 
   @override
-  final String? id;
+  final String id;
   @override
-  final String? name;
+  final String name;
   @override
+  @JsonKey()
   final String? verboseName;
   @override
+  @JsonKey()
   final String? readme;
   @override
   final String? type;
@@ -272,8 +274,8 @@ class _$DataSchemaImpl implements _DataSchema {
 
 abstract class _DataSchema implements DataSchema {
   const factory _DataSchema(
-      {final String? id,
-      final String? name,
+      {required final String id,
+      required final String name,
       final String? verboseName,
       final String? readme,
       final String? type,
@@ -285,9 +287,9 @@ abstract class _DataSchema implements DataSchema {
       _$DataSchemaImpl.fromJson;
 
   @override
-  String? get id;
+  String get id;
   @override
-  String? get name;
+  String get name;
   @override
   String? get verboseName;
   @override
@@ -312,7 +314,7 @@ DataSchemaField _$DataSchemaFieldFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$DataSchemaField {
-  String? get name => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   String? get verboseName => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
   String? get defaultValue => throw _privateConstructorUsedError;
@@ -330,7 +332,7 @@ abstract class $DataSchemaFieldCopyWith<$Res> {
       _$DataSchemaFieldCopyWithImpl<$Res, DataSchemaField>;
   @useResult
   $Res call(
-      {String? name, String? verboseName, String? type, String? defaultValue});
+      {String name, String? verboseName, String? type, String? defaultValue});
 }
 
 /// @nodoc
@@ -346,16 +348,16 @@ class _$DataSchemaFieldCopyWithImpl<$Res, $Val extends DataSchemaField>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
+    Object? name = null,
     Object? verboseName = freezed,
     Object? type = freezed,
     Object? defaultValue = freezed,
   }) {
     return _then(_value.copyWith(
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       verboseName: freezed == verboseName
           ? _value.verboseName
           : verboseName // ignore: cast_nullable_to_non_nullable
@@ -381,7 +383,7 @@ abstract class _$$DataSchemaFieldImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? name, String? verboseName, String? type, String? defaultValue});
+      {String name, String? verboseName, String? type, String? defaultValue});
 }
 
 /// @nodoc
@@ -395,16 +397,16 @@ class __$$DataSchemaFieldImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
+    Object? name = null,
     Object? verboseName = freezed,
     Object? type = freezed,
     Object? defaultValue = freezed,
   }) {
     return _then(_$DataSchemaFieldImpl(
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       verboseName: freezed == verboseName
           ? _value.verboseName
           : verboseName // ignore: cast_nullable_to_non_nullable
@@ -425,13 +427,13 @@ class __$$DataSchemaFieldImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$DataSchemaFieldImpl implements _DataSchemaField {
   const _$DataSchemaFieldImpl(
-      {this.name, this.verboseName, this.type, this.defaultValue});
+      {required this.name, this.verboseName, this.type, this.defaultValue});
 
   factory _$DataSchemaFieldImpl.fromJson(Map<String, dynamic> json) =>
       _$$DataSchemaFieldImplFromJson(json);
 
   @override
-  final String? name;
+  final String name;
   @override
   final String? verboseName;
   @override
@@ -479,7 +481,7 @@ class _$DataSchemaFieldImpl implements _DataSchemaField {
 
 abstract class _DataSchemaField implements DataSchemaField {
   const factory _DataSchemaField(
-      {final String? name,
+      {required final String name,
       final String? verboseName,
       final String? type,
       final String? defaultValue}) = _$DataSchemaFieldImpl;
@@ -488,7 +490,7 @@ abstract class _DataSchemaField implements DataSchemaField {
       _$DataSchemaFieldImpl.fromJson;
 
   @override
-  String? get name;
+  String get name;
   @override
   String? get verboseName;
   @override

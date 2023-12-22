@@ -39,8 +39,8 @@ class ExampleApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => const DataSetListScreen(),
-        '/dataset': (context) => const DataSetDetailScreen(),
-        '/schema': (context) => const DataSchemaDetailScreen(),
+        '/dataset': (context) => const DataSetScreen(),
+        '/schema': (context) => const DataSchemaScreen(),
       }
     );
   }

@@ -8,10 +8,10 @@ part of 'schema.dart';
 
 _$DataSchemaImpl _$$DataSchemaImplFromJson(Map<String, dynamic> json) =>
     _$DataSchemaImpl(
-      id: json['id'] as String?,
-      name: json['name'] as String?,
-      verboseName: json['verboseName'] as String?,
-      readme: json['readme'] as String?,
+      id: json['id'] as String,
+      name: json['name'] as String,
+      verboseName: json['verboseName'] as String? ?? '',
+      readme: json['readme'] as String? ?? '',
       type: json['type'] as String?,
       createdAt: json['createdAt'] == null
           ? null
@@ -39,7 +39,7 @@ Map<String, dynamic> _$$DataSchemaImplToJson(_$DataSchemaImpl instance) =>
 _$DataSchemaFieldImpl _$$DataSchemaFieldImplFromJson(
         Map<String, dynamic> json) =>
     _$DataSchemaFieldImpl(
-      name: json['name'] as String?,
+      name: json['name'] as String,
       verboseName: json['verboseName'] as String?,
       type: json['type'] as String?,
       defaultValue: json['defaultValue'] as String?,
