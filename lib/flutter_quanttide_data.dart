@@ -11,3 +11,4 @@ export 'src/repositories/schema_repository.dart';
 export 'src/blocs/schema_bloc.dart';
 
 // 视图层
+export 'src/views/record_form.dart';
