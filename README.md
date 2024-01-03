@@ -1,6 +1,6 @@
 # `flutter-quanttide-data`
 
-Flutter Widgets for Quanttide Specification of Data Engineering
+Flutter Widgets for Quanttide Data Engineering
 
 ## Installation
 
