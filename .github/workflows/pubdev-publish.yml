@@ -4,21 +4,16 @@ on:
   release:
     types: [published]
 jobs:
-  # https://dart.dev/tools/pub/automated-publishing#configuring-a-github-action-workflow-for-publishing-to-pubdev
-  publish:
-    permissions:
-      id-token: write
+  publishing:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Flutter SDK
-        uses: flutter-actions/setup-flutter@v2
+      - name: 'checkout'
+        uses: actions/checkout@v2   # required!
+      - name: 'publish to pub.dev'
+        uses: k-paxian/dart-package-publisher@master
         with:
-          channel: stable
-          version: 3.16.5
-      - name: Install dependencies
-        run: flutter pub get
-      # Here you can insert custom steps you need
-      # - run: dart tool/generate-code.dart
-      - name: Publish
-        run: dart pub publish --force
+          accessToken: ${{ secrets.PUBDEV_ACCESS_TOKEN }}
+          refreshToken: ${{ secrets.PUBDEV_REFRESH_TOKEN }}
+          # skipTests: true  # 临时
+          force: true
+          flutter: true
