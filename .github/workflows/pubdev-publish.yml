@@ -6,6 +6,8 @@ on:
 jobs:
   # https://dart.dev/tools/pub/automated-publishing#configuring-a-github-action-workflow-for-publishing-to-pubdev
   publish:
+    permissions:
+      id-token: write
     uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
     # with:
     #   working-directory: path/to/package/within/repository
