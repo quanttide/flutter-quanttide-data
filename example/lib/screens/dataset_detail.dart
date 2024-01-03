@@ -14,7 +14,6 @@ class DataSetScreen extends StatelessWidget {
       body: const Column(
         children: [
           DataSetView(),
-          DataSchemaTableView()
         ]
       ),
     );

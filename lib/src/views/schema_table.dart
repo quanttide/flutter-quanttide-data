@@ -1,57 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:data_table_2/data_table_2.dart';
 
-import '../blocs/schema_bloc.dart';
+import '../schemas/schema.dart';
 
 
 class DataSchemaTableView extends StatelessWidget {
-  const DataSchemaTableView({super.key});
+  final List<DataSchema> dataSchemaList;
+
+  const DataSchemaTableView({super.key, required this.dataSchemaList});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<DataSchemaBloc, DataSchemaState>(
-      builder: (context, state) {
-        if (state is DataSchemaWaiting) {
-          return buildWaiting(context);
-        } else if (state is DataSchemaListSuccess) {
-          return buildSuccess(
-              context,
-              dataSchemaList: state.dataSchemaList
-          );
-        } else if (state is DataSchemaError) {
-          return buildError(context, message: state.message);
-        } else {
-          return buildError(context, message: 'Unknown state');
-        }
-      },
-    );
-  }
-
-  Widget buildSuccess(BuildContext context, {required dataSchemaList}) {
     return DataTable2(
       columns: const [
         DataColumn(label: Text('标识')),
         DataColumn(label: Text('名称')),
       ],
-      rows: dataSchemaList.map((dataset) {
+      rows: dataSchemaList.map((dataSchema) {
         return DataRow(cells: [
-          DataCell(Text(dataset['name'])),
-          DataCell(Text(dataset['verboseName'])),
+          DataCell(Text(dataSchema.name)),
+          DataCell(Text(dataSchema.verboseName!)),
         ]);
       }).toList(),
-    );
-  }
-
-  Widget buildWaiting(BuildContext context){
-    return const Center(
-        child: CircularProgressIndicator()
-    );
-  }
-
-  Widget buildError(BuildContext context, {required message}){
-    return Center(
-      child: Text('Error: $message'),
     );
   }
 }
