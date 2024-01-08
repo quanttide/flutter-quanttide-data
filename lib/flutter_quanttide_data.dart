@@ -4,7 +4,6 @@ export 'src/datasets/schemas/schema.dart';
 export 'src/datasets/schemas/record.dart';
 
 // 数据层
-export 'src/providers/api.dart';
 export 'src/datasets/repositories/dataset_repository.dart';
 export 'src/datasets/repositories/schema_repository.dart';
 export 'src/datasets/repositories/record_repository.dart';

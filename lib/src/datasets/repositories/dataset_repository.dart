@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import '../schemas/dataset.dart';
-import 'package:flutter_quanttide_data/src/providers/api.dart';
+import 'package:flutter_quanttide/flutter_quanttide.dart';
 
 
 class DataSetRepository {

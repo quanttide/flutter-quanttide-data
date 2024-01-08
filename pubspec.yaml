@@ -1,9 +1,10 @@
 name: flutter_quanttide_data
 description: Flutter Widgets for QuantTide Data Engineering
 version: 0.1.0-alpha.3
-homepage: https://github.com/flutter-quanttide/flutter-quanttide-data
-github: https://github.com/flutter-quanttide/flutter-quanttide-data
+homepage: https://pub.dev/packages/flutter_quanttide_data
+repository: https://github.com/flutter-quanttide/flutter-quanttide-data
 issue_tracker: https://github.com/flutter-quanttide/flutter-quanttide-data/issues
+documentation: https://pub.dev/documentation/flutter_quanttide_data/latest/
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -25,6 +26,8 @@ dependencies:
   flutter_form_builder: ^9.1.0
   # 表格
   data_table_2: ^2.5.8
+  # QuantTide
+  flutter_quanttide: ^0.2.0-alpha.2
 
 dev_dependencies:
   flutter_test:

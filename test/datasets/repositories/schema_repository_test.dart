@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:flutter_quanttide/flutter_quanttide.dart';
 
 import 'package:flutter_quanttide_data/flutter_quanttide_data.dart';
 

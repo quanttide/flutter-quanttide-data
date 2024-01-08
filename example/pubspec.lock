@@ -110,6 +110,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.3"
+  flutter_quanttide:
+    dependency: transitive
+    description:
+      name: flutter_quanttide
+      sha256: afcbcecb613d8187f596e4dcbeb8f2a07ec72dd7f768e0b59304aec075681d60
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.2.0-alpha.2"
   flutter_quanttide_data:
     dependency: "direct main"
     description:
@@ -218,6 +226,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "6.0.5"
+  recase:
+    dependency: transitive
+    description:
+      name: recase
+      sha256: e4eb4ec2dcdee52dcf99cb4ceabaffc631d7424ee55e56f280bc039737f89213
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "4.1.0"
   sky_engine:
     dependency: transitive
     description: flutter

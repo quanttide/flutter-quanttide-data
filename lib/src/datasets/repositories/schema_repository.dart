@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import '../schemas/schema.dart';
-import 'package:flutter_quanttide_data/src/providers/api.dart';
+import 'package:flutter_quanttide/flutter_quanttide.dart';
 
 
 class DataSchemaRepository {
@@ -12,7 +12,7 @@ class DataSchemaRepository {
   Future<List<DataSchema>> listDataSchemas() async {
     try {
       // Make API call to fetch data schemas
-      final data = await apiClient.listDataSchemas();
+      final data = await apiClient.request(httpMethod: 'GET', apiPath: '/schemas');
 
       // Convert API response to a list of DataSchema objects
       final List<DataSchema> dataSchemas = (data).map((item) => DataSchema.fromJson(item)).toList();
@@ -39,13 +39,20 @@ class DataSchemaRepository {
 
   Future<void> createDataSchema(DataSchema dataSchema) async {
     try {
-      // Convert DataSchema object to JSON
-      final jsonData = dataSchema.toJson();
-
       // Make API call to save data schema
-      await apiClient.createDataSchema(jsonData);
+      await apiClient.request(httpMethod: 'POST', apiPath: '/schemas', data: dataSchema.toJson());
     } catch (e) {
       throw Exception('Failed to save data schema: $e');
+    }
+  }
+
+  Future<void> updateDataSchema(String name, DataSchema dataSchema) async {
+    try {
+      // Make API call to update data schema by ID
+      await apiClient.request(httpMethod: 'PUT', apiPath: '/schemas/$name', data: dataSchema.toJson());
+    }
+    catch (e) {
+      throw Exception('Failed to update data schema: $e');
     }
   }
 

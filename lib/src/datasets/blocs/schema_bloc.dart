@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_quanttide/flutter_quanttide.dart';
 
-import 'package:flutter_quanttide_data/src/providers/api.dart';
 import '../schemas/schema.dart';
 import '../repositories/schema_repository.dart';
 
