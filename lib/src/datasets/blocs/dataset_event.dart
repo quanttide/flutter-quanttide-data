@@ -1,4 +1,17 @@
 part of 'dataset_bloc.dart';
 
-@immutable
-abstract class DataSetEvent {}
+sealed class DataSetEvent extends Equatable {
+  const DataSetEvent();
+
+  @override
+  List<Object?> get props => [];
+}
+
+class DataSetRetrieved extends DataSetEvent {
+  final DataSet dataset;
+
+  const DataSetRetrieved(this.dataset);
+
+  @override
+  List<Object?> get props => [dataset];
+}

@@ -23,10 +23,10 @@ class DataSchemaBloc extends Bloc<DataSchemaEvent, DataSchemaState> {
   void _onDataSchemaRetrieved(DataSchemaRetrieved event, Emitter<DataSchemaState> emit) async {
     emit(DataSchemaWaiting());
     try {
-      DataSchema dataSchema = await repository.retrieveDataSchema('');
-      emit(DataSchemaDetailSuccess(dataSchema));
-    } catch (error) {
-      emit(DataSchemaError(error.toString()));
+      DataSchema dataSchema = await repository.retrieve('');
+      emit(DataSchemaLoaded(dataSchema));
+    } catch (e) {
+      emit(DataSchemaError(e.toString()));
     }
   }
 
@@ -45,8 +45,8 @@ class DataSchemaBloc extends Bloc<DataSchemaEvent, DataSchemaState> {
   void _onDataSchemaListed(DataSchemaListed event, Emitter<DataSchemaState> emit) async {
     emit(DataSchemaWaiting());
     try {
-      List<DataSchema> dataSchemas = await repository.listDataSchemas();
-      emit(DataSchemaListSuccess(dataSchemas));
+      List<DataSchema> dataSchemas = await repository.list();
+      emit(DataSchemaListLoaded(dataSchemas));
     } catch (error) {
       emit(DataSchemaError(error.toString()));
     }

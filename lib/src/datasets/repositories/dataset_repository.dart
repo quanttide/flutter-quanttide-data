@@ -1,7 +1,7 @@
 import 'dart:async';
+import 'package:flutter_quanttide/flutter_quanttide.dart';
 
 import '../schemas/dataset.dart';
-import 'package:flutter_quanttide/flutter_quanttide.dart';
 
 
 class DataSetRepository {
@@ -9,10 +9,11 @@ class DataSetRepository {
 
   DataSetRepository({required this.apiClient});
 
-  Future<List<DataSet>> listDataSets() async {
+  Future<List<DataSet>> list() async {
     try {
       // Make API call to fetch data sets
-      final data = await apiClient.request(httpMethod: 'GET', apiPath: '/datasets');
+      // note: `as ...`
+      final data = await apiClient.request(httpMethod: 'GET', apiPath: '/datasets') as List<Map<String, dynamic>>;
 
       // Convert API response to a list of DataSet objects
       final List<DataSet> dataSets = (data).map((item) => DataSet.fromJson(item)).toList();
@@ -23,10 +24,10 @@ class DataSetRepository {
     }
   }
 
-  Future<DataSet> retrieveDataSet(String id) async {
+  Future<DataSet> retrieve(String id) async {
     try {
       // Make API call to fetch data set by ID
-      final data = await apiClient.request(httpMethod: 'GET', apiPath: '/datasets/$id');
+      final data = await apiClient.request(httpMethod: 'GET', apiPath: '/datasets/$id') as Map<String, dynamic>;
 
       // Convert API response to a DataSet object
       final DataSet dataSet = DataSet.fromJson(data);
@@ -37,7 +38,7 @@ class DataSetRepository {
     }
   }
 
-  Future<void> createDataSet(DataSet dataSet) async {
+  Future<void> create(DataSet dataSet) async {
     try {
       // Convert DataSet object to JSON
       final jsonData = dataSet.toJson();
@@ -49,7 +50,7 @@ class DataSetRepository {
     }
   }
 
-  Future<void> deleteDataSet(String id) async {
+  Future<void> delete(String id) async {
     try {
       // Make API call to delete data set by ID
       await apiClient.request(httpMethod: 'DELETE', apiPath: '/datasets/$id');

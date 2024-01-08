@@ -13,7 +13,7 @@ class DataSchemaTableScreen extends StatelessWidget {
       builder: (context, state) {
         if (state is DataSchemaWaiting) {
           return buildWaiting(context);
-        } else if (state is DataSchemaListSuccess) {
+        } else if (state is DataSchemaListLoaded) {
           return buildSuccess(
               context,
               dataSchemaList: state.dataSchemaList

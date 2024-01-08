@@ -8,7 +8,6 @@ sealed class DataSchemaState extends Equatable {
   List<Object?> get props => [];
 }
 
-
 class DataSchemaInitial extends DataSchemaState {}
 
 class DataSchemaWaiting extends DataSchemaState {}
@@ -22,19 +21,19 @@ class DataSchemaError extends DataSchemaState {
   List<Object?> get props => [message];
 }
 
-class DataSchemaDetailSuccess extends DataSchemaState {
+class DataSchemaLoaded extends DataSchemaState {
   final DataSchema dataSchema;
 
-  const DataSchemaDetailSuccess(this.dataSchema);
+  const DataSchemaLoaded(this.dataSchema);
 
   @override
   List<Object?> get props => [dataSchema];
 }
 
-class DataSchemaListSuccess extends DataSchemaState {
+class DataSchemaListLoaded extends DataSchemaState {
   final List<DataSchema> dataSchemaList;
 
-  const DataSchemaListSuccess(this.dataSchemaList);
+  const DataSchemaListLoaded(this.dataSchemaList);
 
   @override
   List<Object?> get props => [dataSchemaList];

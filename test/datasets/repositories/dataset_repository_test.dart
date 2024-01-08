@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:flutter_quanttide/flutter_quanttide.dart';
+
 import 'package:flutter_quanttide_data/flutter_quanttide_data.dart';
 
 class MockApiClient extends Mock implements ApiClient {}
@@ -8,21 +9,21 @@ class MockApiClient extends Mock implements ApiClient {}
 
 void main() {
   late DataSetRepository dataSetRepository;
-  late MockApiClient mockApiClient;
+  final MockApiClient mockApiClient = MockApiClient();
+  Map<String, dynamic> datasetJson = {'id': '1', 'name': 'dataset1', 'verboseName': 'DataSet1', 'readme': 'Readme1'};
 
   setUp(() {
-    mockApiClient = MockApiClient();
     dataSetRepository = DataSetRepository(apiClient: mockApiClient);
   });
 
   group('DataSetRepository', () {
-    test('listDataSets returns a list of DataSet objects', () async {
+    test('list method returns a list of DataSet objects', () async {
       // Arrange
-      when(mockApiClient.request(httpMethod: 'GET', apiPath: '/datasets'))
-          .thenAnswer((_) async => [{'id': '1', 'name': 'dataset1'}]);
+      when(() => mockApiClient.request(httpMethod: 'GET', apiPath: '/datasets'))
+          .thenAnswer((_) async => [datasetJson]);
 
       // Act
-      final dataSets = await dataSetRepository.listDataSets();
+      final dataSets = await dataSetRepository.list();
 
       // Assert
       expect(dataSets, isA<List<DataSet>>());
@@ -31,35 +32,35 @@ void main() {
       expect(dataSets[0].name, 'dataset1');
     });
 
-    test('retrieveDataSet returns a DataSet object', () async {
+    test('retrieve method returns a DataSet object', () async {
       // Arrange
       const dataSetId = '1';
-      when(mockApiClient.request(httpMethod: 'GET', apiPath: '/datasets/$dataSetId'))
-          .thenAnswer((_) async => {'id': dataSetId, 'name': 'DataSet 1'});
+      when(() => mockApiClient.request(httpMethod: 'GET', apiPath: '/datasets/$dataSetId'))
+          .thenAnswer((_) async => datasetJson);
 
       // Act
-      final dataSet = await dataSetRepository.retrieveDataSet(dataSetId);
+      final dataSet = await dataSetRepository.retrieve(dataSetId);
 
       // Assert
       expect(dataSet, isA<DataSet>());
-      expect(dataSet.id, dataSetId);
-      expect(dataSet.name, 'DataSet 1');
+      expect(dataSet.id, datasetJson['id']);
+      expect(dataSet.name, datasetJson['name']);
     });
 
     test('createDataSet sends a POST request with the correct data', () async {
       // Arrange
       final dataSetToCreate = DataSet(id: '1', name: 'New DataSet', verboseName: '');
-      when(mockApiClient.request(
+      when(() => mockApiClient.request(
         httpMethod: 'POST',
         apiPath: '/datasets',
         data: dataSetToCreate.toJson(),
       )).thenAnswer((_) async => {});
 
       // Act
-      await dataSetRepository.createDataSet(dataSetToCreate);
+      await dataSetRepository.create(dataSetToCreate);
 
       // Assert
-      verify(mockApiClient.request(
+      verify(() => mockApiClient.request(
         httpMethod: 'POST',
         apiPath: '/datasets',
         data: dataSetToCreate.toJson(),
@@ -69,15 +70,15 @@ void main() {
     test('deleteDataSet sends a DELETE request with the correct path', () async {
       // Arrange
       const dataSetIdToDelete = '1';
-      when(mockApiClient.request(httpMethod: 'DELETE', apiPath: '/datasets/$dataSetIdToDelete'))
+      when(() => mockApiClient.request(httpMethod: 'DELETE', apiPath: '/datasets/$dataSetIdToDelete'))
           .thenAnswer((_) async => {});
 
       // Act
-      await dataSetRepository.deleteDataSet(dataSetIdToDelete);
+      await dataSetRepository.delete(dataSetIdToDelete);
 
       // Assert
-      verify(mockApiClient.request(httpMethod: 'DELETE', apiPath: '/datasets/$dataSetIdToDelete'))
+      verify(() => mockApiClient.request(httpMethod: 'DELETE', apiPath: '/datasets/$dataSetIdToDelete'))
           .called(1);
     });
-  }, skip: true);
+  });
 }

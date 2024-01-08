@@ -132,7 +132,7 @@ class _$DataRecordImpl implements _DataRecord {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DataRecordImpl &&
@@ -287,7 +287,7 @@ class _$DataRecordItemImpl implements _DataRecordItem {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DataRecordItemImpl &&

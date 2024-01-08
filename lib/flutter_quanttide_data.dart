@@ -1,3 +1,4 @@
+// 数据集子领域
 // 领域模型
 export 'src/datasets/schemas/dataset.dart';
 export 'src/datasets/schemas/schema.dart';
@@ -8,7 +9,8 @@ export 'src/datasets/repositories/dataset_repository.dart';
 export 'src/datasets/repositories/schema_repository.dart';
 export 'src/datasets/repositories/record_repository.dart';
 
-// BLoC组件
+// BLoC
+export 'src/datasets/blocs/dataset_bloc.dart';
 export 'src/datasets/blocs/schema_bloc.dart';
 
 // 视图层

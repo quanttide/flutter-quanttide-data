@@ -24,7 +24,7 @@ void main() {
         'id': 'some_id',
         'name': 'Some Name',
         'verboseName': 'Verbose Name',
-        'description': 'Some Description',
+        'readme': 'Some Description',
       };
 
       final datasetFromJson = DataSet.fromJson(jsonMap);

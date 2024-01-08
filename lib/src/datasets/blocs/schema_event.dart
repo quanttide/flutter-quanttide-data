@@ -1,7 +1,13 @@
 part of 'schema_bloc.dart';
 
 
-sealed class DataSchemaEvent {}
+sealed class DataSchemaEvent extends Equatable  {
+  const DataSchemaEvent();
+
+  @override
+  List<Object> get props => [];
+}
+
 
 class DataSchemaRetrieved extends DataSchemaEvent {}
 

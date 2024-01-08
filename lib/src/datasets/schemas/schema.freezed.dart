@@ -236,7 +236,7 @@ class _$DataSchemaImpl implements _DataSchema {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DataSchemaImpl &&
@@ -447,7 +447,7 @@ class _$DataSchemaFieldImpl implements _DataSchemaField {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DataSchemaFieldImpl &&
