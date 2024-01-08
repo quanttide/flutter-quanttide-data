@@ -7,9 +7,9 @@ import '../schemas/dataset.dart';
 
 class DataSetTableView extends StatelessWidget {
   final List<DataSet> datasetList = [
-    DataSet(name: 'universities', description: '高校及其院系列表', verboseName: '高校数据集', id: '1'),
-    DataSet(name: 'weibo', description: '上市公司微博简介', verboseName: '微博数据集', id: '2'),
-    DataSet(name: 'university-fellows', description: '高校教师简历', verboseName: "高校教师数据集", id: '3'),
+    DataSet(name: 'universities', readme: '高校及其院系列表', verboseName: '高校数据集', id: '1'),
+    DataSet(name: 'weibo', readme: '上市公司微博简介', verboseName: '微博数据集', id: '2'),
+    DataSet(name: 'university-fellows', readme: '高校教师简历', verboseName: "高校教师数据集", id: '3'),
   ];
 
   DataSetTableView({super.key, required datasetList});
@@ -29,8 +29,8 @@ class DataSetTableView extends StatelessWidget {
             DataRow(
               cells: [
                 DataCell(Text(datasetList[index].name)),
-                DataCell(Text(datasetList[index].verboseName!)),
-                DataCell(Text(datasetList[index].description!)),
+                DataCell(Text(datasetList[index].verboseName)),
+                DataCell(Text(datasetList[index].readme)),
               ],
             ),
       ),

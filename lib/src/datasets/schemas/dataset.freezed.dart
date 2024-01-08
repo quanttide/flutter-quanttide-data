@@ -20,10 +20,17 @@ DataSet _$DataSetFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$DataSet {
+  /// ID
   String get id => throw _privateConstructorUsedError;
+
+  /// 标识
   String get name => throw _privateConstructorUsedError;
-  String? get verboseName => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
+
+  /// 名称
+  String get verboseName => throw _privateConstructorUsedError;
+
+  /// 简介
+  String get readme => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +42,7 @@ abstract class $DataSetCopyWith<$Res> {
   factory $DataSetCopyWith(DataSet value, $Res Function(DataSet) then) =
       _$DataSetCopyWithImpl<$Res, DataSet>;
   @useResult
-  $Res call({String id, String name, String? verboseName, String? description});
+  $Res call({String id, String name, String verboseName, String readme});
 }
 
 /// @nodoc
@@ -53,8 +60,8 @@ class _$DataSetCopyWithImpl<$Res, $Val extends DataSet>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? verboseName = freezed,
-    Object? description = freezed,
+    Object? verboseName = null,
+    Object? readme = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -65,14 +72,14 @@ class _$DataSetCopyWithImpl<$Res, $Val extends DataSet>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      verboseName: freezed == verboseName
+      verboseName: null == verboseName
           ? _value.verboseName
           : verboseName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      readme: null == readme
+          ? _value.readme
+          : readme // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -84,7 +91,7 @@ abstract class _$$DataSetImplCopyWith<$Res> implements $DataSetCopyWith<$Res> {
       __$$DataSetImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String? verboseName, String? description});
+  $Res call({String id, String name, String verboseName, String readme});
 }
 
 /// @nodoc
@@ -100,8 +107,8 @@ class __$$DataSetImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? verboseName = freezed,
-    Object? description = freezed,
+    Object? verboseName = null,
+    Object? readme = null,
   }) {
     return _then(_$DataSetImpl(
       id: null == id
@@ -112,14 +119,14 @@ class __$$DataSetImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      verboseName: freezed == verboseName
+      verboseName: null == verboseName
           ? _value.verboseName
           : verboseName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      readme: null == readme
+          ? _value.readme
+          : readme // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -130,24 +137,33 @@ class _$DataSetImpl implements _DataSet {
   _$DataSetImpl(
       {required this.id,
       required this.name,
-      this.verboseName,
-      this.description});
+      this.verboseName = '',
+      this.readme = ''});
 
   factory _$DataSetImpl.fromJson(Map<String, dynamic> json) =>
       _$$DataSetImplFromJson(json);
 
+  /// ID
   @override
   final String id;
+
+  /// 标识
   @override
   final String name;
+
+  /// 名称
   @override
-  final String? verboseName;
+  @JsonKey()
+  final String verboseName;
+
+  /// 简介
   @override
-  final String? description;
+  @JsonKey()
+  final String readme;
 
   @override
   String toString() {
-    return 'DataSet(id: $id, name: $name, verboseName: $verboseName, description: $description)';
+    return 'DataSet(id: $id, name: $name, verboseName: $verboseName, readme: $readme)';
   }
 
   @override
@@ -159,14 +175,12 @@ class _$DataSetImpl implements _DataSet {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.verboseName, verboseName) ||
                 other.verboseName == verboseName) &&
-            (identical(other.description, description) ||
-                other.description == description));
+            (identical(other.readme, readme) || other.readme == readme));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, verboseName, description);
+  int get hashCode => Object.hash(runtimeType, id, name, verboseName, readme);
 
   @JsonKey(ignore: true)
   @override
@@ -186,19 +200,27 @@ abstract class _DataSet implements DataSet {
   factory _DataSet(
       {required final String id,
       required final String name,
-      final String? verboseName,
-      final String? description}) = _$DataSetImpl;
+      final String verboseName,
+      final String readme}) = _$DataSetImpl;
 
   factory _DataSet.fromJson(Map<String, dynamic> json) = _$DataSetImpl.fromJson;
 
   @override
+
+  /// ID
   String get id;
   @override
+
+  /// 标识
   String get name;
   @override
-  String? get verboseName;
+
+  /// 名称
+  String get verboseName;
   @override
-  String? get description;
+
+  /// 简介
+  String get readme;
   @override
   @JsonKey(ignore: true)
   _$$DataSetImplCopyWith<_$DataSetImpl> get copyWith =>

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_quanttide_data/flutter_quanttide_data.dart';
 
 
-class DataSetScreen extends StatelessWidget {
-  const DataSetScreen({super.key});
+class DataSetDetailScreen extends StatelessWidget {
+  const DataSetDetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

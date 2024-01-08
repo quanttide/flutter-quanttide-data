@@ -9,14 +9,14 @@ void main() {
         id: 'some_id',
         name: 'Some Name',
         verboseName: 'Verbose Name',
-        description: 'Some Description',
+        readme: 'Some Description',
       );
 
       expect(dataset, isA<DataSet>());
       expect(dataset.id, 'some_id');
       expect(dataset.name, 'Some Name');
       expect(dataset.verboseName, 'Verbose Name');
-      expect(dataset.description, 'Some Description');
+      expect(dataset.readme, 'Some Description');
     });
 
     test('fromJson and toJson', () {
@@ -33,7 +33,7 @@ void main() {
       expect(datasetFromJson.id, 'some_id');
       expect(datasetFromJson.name, 'Some Name');
       expect(datasetFromJson.verboseName, 'Verbose Name');
-      expect(datasetFromJson.description, 'Some Description');
+      expect(datasetFromJson.readme, 'Some Description');
 
       final jsonFromDataset = datasetFromJson.toJson();
 

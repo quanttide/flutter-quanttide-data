@@ -10,8 +10,8 @@ _$DataSetImpl _$$DataSetImplFromJson(Map<String, dynamic> json) =>
     _$DataSetImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      verboseName: json['verboseName'] as String?,
-      description: json['description'] as String?,
+      verboseName: json['verboseName'] as String? ?? '',
+      readme: json['readme'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$DataSetImplToJson(_$DataSetImpl instance) =>
@@ -19,5 +19,5 @@ Map<String, dynamic> _$$DataSetImplToJson(_$DataSetImpl instance) =>
       'id': instance.id,
       'name': instance.name,
       'verboseName': instance.verboseName,
-      'description': instance.description,
+      'readme': instance.readme,
     };
