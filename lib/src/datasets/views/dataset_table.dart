@@ -1,39 +1,33 @@
 /// 数据集表格视图
-
 import 'package:flutter/material.dart';
+import 'package:data_table_2/data_table_2.dart';
 
 import '../schemas/dataset.dart';
 
 
+/// 数据集表格视图
 class DataSetTableView extends StatelessWidget {
-  final List<DataSet> datasetList = [
-    DataSet(name: 'universities', readme: '高校及其院系列表', verboseName: '高校数据集', id: '1'),
-    DataSet(name: 'weibo', readme: '上市公司微博简介', verboseName: '微博数据集', id: '2'),
-    DataSet(name: 'university-fellows', readme: '高校教师简历', verboseName: "高校教师数据集", id: '3'),
-  ];
+  /// 数据集列表
+  final List<DataSet> datasets;
 
-  DataSetTableView({super.key, required datasetList});
+  const DataSetTableView({super.key, required this.datasets});
 
   @override
   Widget build(BuildContext context) {
-    final List<String> columns = ["标识", '名称', '描述'];
-    return DataTable(
+    final List<String> columns = ["ID", "标识", '名称', '描述'];
+    return DataTable2(
       // minWidth: 600,
-      columns: List.generate(
-        datasetList.length,
-          (index) => DataColumn(label: Text(columns[index])),
-      ),
-      rows: List.generate(
-        datasetList.length,
-            (index) =>
-            DataRow(
-              cells: [
-                DataCell(Text(datasetList[index].name)),
-                DataCell(Text(datasetList[index].verboseName)),
-                DataCell(Text(datasetList[index].readme)),
-              ],
-            ),
-      ),
+      columns: columns.map((column) =>
+        DataColumn(label: Text(column))
+      ).toList(),
+      rows: datasets.map((dataset) =>
+        DataRow(cells: [
+          DataCell(Text(dataset.id)),
+          DataCell(Text(dataset.name)),
+          DataCell(Text(dataset.verboseName)),
+          DataCell(Text(dataset.readme)),
+        ])
+      ).toList(),
     );
   }
 }

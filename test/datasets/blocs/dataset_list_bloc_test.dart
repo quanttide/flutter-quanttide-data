@@ -8,18 +8,18 @@ class MockDataSetRepository extends Mock implements DataSetRepository {}
 
 
 void main() {
-  group('DataSetBloc', () {
-    late DataSetBloc datasetBloc;
+  group('DataSetListBloc', () {
+    late DataSetListBloc datasetBloc;
 
     final DataSet dataset = DataSet(id: '1', name: 'test-dataset', verboseName: 'Test Dataset', readme: 'This is a test dataset.');
     final mockRepository = MockDataSetRepository();
 
     setUp(() {
-      datasetBloc = DataSetBloc(repository: mockRepository);
+      datasetBloc = DataSetListBloc(repository: mockRepository);
     });
 
     test('initial state', () {
-      expect(datasetBloc.state, DataSetInitial());
+      expect(datasetBloc.state, DataSetListInitial());
     });
 
     blocTest(
@@ -29,8 +29,8 @@ void main() {
             .thenAnswer((_) async => dataset);
         return datasetBloc;
       },
-      act: (bloc) => bloc.add(DataSetRetrieved(dataset)),
-      expect: () => [DataSetWaiting(), DataSetLoaded(dataset)],
+      act: (bloc) => bloc.add(DataSetRetrieving(dataset)),
+      expect: () => [DataSetListWaiting(), DataSetItemLoaded(dataset)],
     );
   });
 }

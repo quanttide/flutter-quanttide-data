@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:flutter_quanttide_data/flutter_quanttide_data.dart';
+import 'package:mocktail/mocktail.dart';
+
+import 'mocks/dataset.dart';
 import 'screens/dataset_list.dart';
 import 'screens/dataset_detail.dart';
 import 'screens/schema_detail.dart';
@@ -16,8 +21,16 @@ class ExampleApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // mock
+    when(() => datasetRepository.list())
+        .thenAnswer((_) async {
+          // 模拟延迟，例如 2 秒
+          await Future.delayed(const Duration(seconds: 2));
+          return datasets;
+        });
+    // app
     return MaterialApp(
-      title: '量潮数据工程示例应用',
+      title: '量潮数据工程',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -38,7 +51,10 @@ class ExampleApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        '/': (context) => const DataSetListScreen(),
+        '/': (context) => BlocProvider(
+          create: (context) => DataSetListBloc(repository: datasetRepository)..add(DataSetListing()),
+          child: const DataSetListScreen(),
+        ),
         '/dataset': (context) => const DataSetDetailScreen(),
         '/schema': (context) => const DataSchemaScreen(),
       }

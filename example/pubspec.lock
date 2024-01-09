@@ -111,7 +111,7 @@ packages:
     source: hosted
     version: "2.0.3"
   flutter_quanttide:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_quanttide
       sha256: afcbcecb613d8187f596e4dcbeb8f2a07ec72dd7f768e0b59304aec075681d60
@@ -202,6 +202,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.10.0"
+  mocktail:
+    dependency: "direct main"
+    description:
+      name: mocktail
+      sha256: f603ebd85a576e5914870b02e5839fc5d0243b867bf710651cf239a28ebb365e
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.2"
   nested:
     dependency: transitive
     description:
